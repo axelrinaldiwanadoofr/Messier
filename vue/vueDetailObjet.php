@@ -2,7 +2,7 @@
 <br/>
 
 <p id="principal" style="text-align: center">
-    <img src="photos/<?= $laPhoto ?>" alt="photo de l'objet"  />
+    <img src="photos/<?= $unObjet->getNumero()?>.jpg" alt="photo de l'objet"  />
     <br />
     <br /> 
     <h2>

@@ -2,43 +2,39 @@
     <br/>
     <h1 class = "text-center">Résultat de la recherche</h1>
     <br/><br/>
-    <div class="row justify-content-center">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                
-            <?php
-                if($unObjet){                
-            ?>
-                    <table class="table">
-                         <thead>
-                            <tr>
-                                <th scope="col">Numéro</th>
-                                <th scope="col">Nom</th>
-                                <th scope="col">Type objet</th>
-                                <th scope="col">Détails</th>                
-                           </tr>
-                        </thead>
-                        <tbody>
-            <?php
-                    $numero = $unObjet->getNumero();
-                    $nom = $unObjet->getNomCommun();
-                    $libelleType = $unObjet->getTypeObjet()->getLibelle();
+    <div class="row">
+        <div class="col-md-8 mx-auto text-center">
 
-                    echo "<tr>";
-                        echo "<td scope='row'>" . $numero . "</td>";
-                        echo "<td>" . $nom . "</td>";
-                        echo "<td>" . $libelleType . "</td>";
-                        echo "<td><a class='nav-link' href='./?action=detail&numero=" . $numero . "'><img src='images/rechercher.png' alt='Afficher le détail'></a></td>";
-                    echo "</tr>";
-                    echo "</tbody>";
-                echo "</table>";                    
-                } 
-                else{
-                    echo "<br/><h2>Objet non référencé !</h2>";
-                }
-            ?>
+        <?php
+            if(isset($unObjet) && $unObjet != null){                
+        ?>
+                <table class="table">
+                     <thead>
+                        <tr>
+                            <th scope="col">Numéro</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Type objet</th>
+                            <th scope="col">Photo</th>                                 
+                            <th scope="col">Détails</th>                
+                       </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td scope='row'><?= $unObjet->getNumero() ?></td>
+                        <td><?= $unObjet->getNomCommun() ?></td>
+                        <td><?= $unObjet->getTypeObjet()->getLibelle() ?></td>
+                        <td><img src='photos/<?= $unObjet->getNumero() ?>p.jpg' alt='photo'></td>                        
+                        <td><a class='nav-link' href='./?action=detail&numero=<?= $unObjet->getNumero() ?>'><img src='images/rechercher.png' alt='Afficher le détail'></a></td>
+                    </tr>
+                </tbody>
+                </table>
+        <?php
+            } 
+            else{
+                echo "<br/><h2>Objet non référencé !</h2>";
+            }
+        ?>
 
-              </div>
         </div>
     </div>
 </div>

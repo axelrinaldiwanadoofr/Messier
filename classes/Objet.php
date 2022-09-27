@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Description of Objet
- *
- * @author Ordi-herve
- */
 class Objet {
     //Les attributs privés
     private string $numero;

@@ -7,11 +7,12 @@
     
     class ModeleObjetDAO{
         
+        //Attribut
         private static $lesObjets;
         
-        
+        //Méthodes
         public static function readAll() {
-             self::$lesObjets = self::chargerObjets();
+            self::$lesObjets = self::chargerObjets();
             return self::$lesObjets; 
         }
 
@@ -29,7 +30,7 @@
         } 
         
             
-        public static function chargerObjets()
+        private static function chargerObjets()
         {
             $resultat = new ArrayObject();
 

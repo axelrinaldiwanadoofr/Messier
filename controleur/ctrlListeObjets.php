@@ -1,16 +1,42 @@
 <?php
-if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ){
-    $racine="..";
-}
 
 include_once "$racine/modele/modeleObjetDAO.php";
 
-
-// appel des fonctions permettant de recuperer les données utiles à l'affichage 
+// Récupération des données nécessaires à l'affichage 
 $listeObjets = ModeleObjetDAO::readAll();
 
+//Calcul de la page début et de la page fin
+$page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_NUMBER_INT);
+
+const PAGE_MAX = 19;
+
+if($page > PAGE_MAX)
+{
+    $page1 = PAGE_MAX;
+}
+
+$debut = ($page - 1) * 6;
+$fin = $debut + 6;
+if($fin > 109){
+    $fin = 109;
+}
+
+//Préparation des numéros de page à afficher
+$p1 = $page;
+$p2 = $page + 1;
+$p3 = $page + 2;
+
+$precedente = true;
+if($p1 == 1){
+    $precedente = false;
+}
+
+$suivante = true;
+if($p1 >= PAGE_MAX || $p2 >= PAGE_MAX || $p3 >= PAGE_MAX){
+    $suivante = false;
+}
+
 // appel du script de vue qui permet de gerer l'affichage des donnees
-$titre = "Liste des objets";
 include "$racine/vue/vueEntete.php";
 include "$racine/vue/vueListeObjets.php";
 include "$racine/vue/vuePied.php";

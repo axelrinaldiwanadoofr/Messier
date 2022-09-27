@@ -1,23 +1,29 @@
-
-<h1 class="text-center">Recherche d'objets</h1>
+<br/>
+<h1 class="text-center">Recherche d'objets par numéro</h1>
 <br/>
 
-<form action="./?action=recherche&critere=<?= $critere ?>" method="POST">
+<div class="row">
+    <div class="col-4 mx-auto text-center">
+        <form action="./?action=recherche&critere=<?= $critere ?>" method="POST">
+
+            <?php
+                switch ($critere) {
+                    case "numero":
+            ?>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="numeroObj" placeholder="numero" value="<?= $numeroObj ?>" /><br />
+                        </div>
+            <?php
+                        break;
+                }
+            ?>
+            <input type="submit" class="btn btn-success" value="Rechercher" />
+            <br/>
+        </form>
+        <br/><br/>
+    </div>
+</div>
 
 
-    <?php
-        switch ($critere) {
-            case "numero":
-    ?>
-                <div class="form-group">
-                    <label>Recherche par numero : </label>
-                    <input type="text" class="form-control" name="numeroObj" placeholder="numero" value="<?= $numeroObj ?>" /><br />
-                </div>
-    <?php
-                break;
-        }
-    ?>
-    <br /><br />
-    <input type="submit" class="btn btn-success" value="Rechercher" />
 
-</form>
+

@@ -1,7 +1,7 @@
 <?php
-
     //Permet de connaitre la racine du projet
-    include "getRacine.php";
+    $racine = dirname(__FILE__);
+
     include_once "$racine/modele/ModeleObjetDAO.php";
 
     //inclure le routeur
@@ -13,8 +13,8 @@
         $action = "defaut";
     }
 
-    //Appel au routeur pour déterminer le controleur à appeler
-    $controleur = routeur($action);
+    //Appel au routeur pour récupérer le controleur à appeler
+    $controleur = Routeur::getControleur($action);
 
     //Inclure le bon controleur
     include "$racine/controleur/$controleur";

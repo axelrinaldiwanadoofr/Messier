@@ -8,7 +8,6 @@
 	//Attribut statique
         private static $connexion;
 
-
         /**
          * Constructeur privé vide
          */				
