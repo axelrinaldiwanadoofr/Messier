@@ -29,16 +29,16 @@ switch($critere){
 // appel du script de vue qui permet de gerer l'affichage des donnees
 
 //Entete
-include "$racine/vue/vueEntete.php";
+include "$racine/vue/VueEntete.php";
 
 //VueRechercheObjet
-include "$racine/vue/vueRechercheObjet.php";
+include "$racine/vue/VueRechercheObjet.php";
 
 if(isset($numeroObj))
 {
     // affichage des resultats de la recherche
-    include "$racine/vue/vueResultRecherche.php";
+    include "$racine/vue/VueResultRecherche.php";
 }    
 
 //Vue pied de page
-include "$racine/vue/vuePied.php";
+include "$racine/vue/VuePied.php";

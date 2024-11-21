@@ -1,6 +1,5 @@
 <?php
-
-include_once "$racine/modele/modeleObjetDAO.php";
+include_once "$racine/modele/ModeleObjetDAO.php";
 
 // Récupération des données nécessaires à l'affichage 
 $listeObjets = ModeleObjetDAO::readAll();
@@ -37,7 +36,7 @@ if($p1 >= PAGE_MAX || $p2 >= PAGE_MAX || $p3 >= PAGE_MAX){
 }
 
 // appel du script de vue qui permet de gerer l'affichage des donnees
-include "$racine/vue/vueEntete.php";
-include "$racine/vue/vueListeObjets.php";
-include "$racine/vue/vuePied.php";
+include "$racine/vue/VueEntete.php";
+include "$racine/vue/VueListeObjets.php";
+include "$racine/vue/VuePied.php";
 

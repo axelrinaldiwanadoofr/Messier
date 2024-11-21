@@ -11,7 +11,7 @@
 class ModeleTypeObjetDAO {
     public static function findById($code){
         try {
-            $req = Connexion::getInstance()->prepare("SELECT * FROM typeObjet WHERE code = :code");
+            $req = Connexion::getInstance()->prepare("SELECT * FROM typeobjet WHERE code = :code");
             $req->bindValue(':code', $code, PDO::PARAM_STR);
             $req->execute();
 

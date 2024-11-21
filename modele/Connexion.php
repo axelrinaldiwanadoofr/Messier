@@ -21,14 +21,15 @@
         public static function getInstance(){
             if(!self::$connexion){
                 try {
-                    $serveur = 'mysql:host=localhost:3307;';
+                    $serveur = 'mysql:host=localhost:3306;';
                     $bdd = 'dbname=bd_messier';   		
                     $user = 'root' ; 
-                    $mdp = '' ;
-                    
+                    $mdp = 'root' ;
+
                     self::$connexion = new PDO($serveur.$bdd, $user, $mdp); 
                     self::$connexion->query("SET CHARACTER SET utf8");
                 } catch (PDOException $e) {
+                        echo " Error connexion: " . $serveur . " " . $bdd . " " . $user . " " . $mdp . " " . $e->getMessage() ;
                         throw new Exception("Erreur à  la connexion \n" . $e->getMessage());
                 }
             }

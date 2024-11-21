@@ -4,10 +4,10 @@ class Routeur{
     
     //Attributs
     private static $lesActions = array(
-        'defaut' => 'ctrlAccueil.php',
-        'detail' => 'ctrlDetailObjet.php',
-        'recherche' => 'ctrlRechercheObjet.php',        
-        'liste' => 'ctrlListeObjets.php');    
+        'defaut' => 'CtrlAccueil.php',
+        'detail' => 'CtrlDetailObjet.php',
+        'recherche' => 'CtrlRechercheObjet.php',        
+        'liste' => 'CtrlListeObjets.php');    
     
         
     //Fonction qui retourne le fichier controleur à utiliser
