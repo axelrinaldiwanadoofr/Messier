@@ -37,9 +37,7 @@
             $req = "SELECT * FROM objet ORDER BY 1";
 
             try {
-                echo " 4" ;
                 $curseur = Connexion::getInstance()->query($req);
-                echo " 5" ;
 
                 //plusieurs lignes de résultat
                 while ($ligne = $curseur->fetch(PDO::FETCH_ASSOC)) {
